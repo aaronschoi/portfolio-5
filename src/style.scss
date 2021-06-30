@@ -1,0 +1,56 @@
+@import url("https://fonts.googleapis.com/css2?family=Bitter:wght@600&display=swap");
+
+$media-desktop: "only screen and (min-width : 1025px)";
+$media-tablet: "only screen and (max-width : 1024px)";
+$media-mobile: "only screen and (max-width : 600px)";
+$media-mobile-sm: "only screen and (max-width : 480px)";
+
+@mixin background {
+  background-image: url("./botanical.jpg");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  @media #{$media-mobile-sm} {
+    background-size: 100% 100vh;
+  }
+}
+
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: "Bitter", serif;
+  font-size: 1.5em;
+  color: white;
+  @include background;
+  background-color: white;
+}
+
+.component-container {
+  margin-top: 10vh;
+}
+
+@media #{$media-mobile-sm} {
+  body {
+    background-size: 100% 100vh;
+  }
+
+  .component-container {
+    margin-top: 0;
+    min-height: 100%;
+  }
+}
+
+*{
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+*::-webkit-scrollbar {
+  display: none;
+}
+
+@import "./SASS/Navbar";
+@import "./SASS/hamburger";
+@import "./SASS/Main";
+@import "./SASS/Projects";
+@import "./SASS/Contact";

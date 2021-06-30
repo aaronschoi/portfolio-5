@@ -1,0 +1,365 @@
+@import url("https://fonts.googleapis.com/css2?family=Bitter:wght@600&display=swap");
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: "Bitter", serif;
+  font-size: 1.5em;
+  color: white;
+  background-image: url("./botanical.jpg");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-color: white;
+}
+@media only screen and (max-width : 480px) {
+  body {
+    background-size: 100% 100vh;
+  }
+}
+
+.component-container {
+  margin-top: 10vh;
+}
+
+@media only screen and (max-width : 480px) {
+  body {
+    background-size: 100% 100vh;
+  }
+
+  .component-container {
+    margin-top: 0;
+    min-height: 100%;
+  }
+}
+* {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+*::-webkit-scrollbar {
+  display: none;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 10vh;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: -1;
+}
+.navbar h1 {
+  margin: 0 20px;
+}
+.navbar ul {
+  list-style-type: none;
+  display: flex;
+}
+.navbar ul .navbar-link {
+  padding: 5px;
+  border-radius: 25px;
+  text-decoration: none;
+  transition: background 0.5s ease;
+  margin: 0 10px;
+  color: white;
+}
+.navbar ul .navbar-link:hover {
+  background: white;
+  color: black;
+}
+
+#hamburger-menu-wrapper {
+  padding-top: 5vh;
+  height: 0vh;
+  width: 100%;
+  transition: 1s;
+  position: fixed;
+  top: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  z-index: 98;
+}
+
+@media only screen and (max-width : 480px) {
+  .navbar {
+    justify-content: flex-end;
+  }
+  .navbar h1 {
+    display: none;
+  }
+  .navbar .navbar-choices {
+    display: none;
+  }
+  .navbar .navbar-choices .navbar-link {
+    display: none;
+  }
+}
+#hamburger {
+  display: none;
+  cursor: pointer;
+  margin-right: 20px;
+  padding: 5px;
+  border-radius: 10%;
+}
+
+.bar-1,
+.bar-2,
+.bar-3 {
+  width: 35px;
+  height: 5px;
+  background-color: white;
+  margin: 6px 0;
+  transition: 0.4s;
+  border-radius: 25px;
+}
+
+.change .bar-1 {
+  -webkit-transform: rotate(75deg) translate(1px, -7px);
+  transform: rotate(70deg) translate(12px, -4px);
+  background-color: black;
+}
+
+.change .bar-2 {
+  -webkit-transform: rotate(45deg) translate(1px, -7px) scale(0.4);
+  transform: rotate(-70deg) translate(0px, -4px);
+  background-color: black;
+}
+
+.change .bar-3 {
+  -webkit-transform: rotate(-90deg) translate(14px, 12px) scale(0.7);
+  transform: translate(2px, -8px) scale(0.5);
+  background-color: black;
+}
+
+.hamburger-menu-item {
+  font-size: 1em;
+  width: 0;
+  text-align: center;
+  transition: all 1s ease-in-out;
+}
+.hamburger-menu-item .navbar-link {
+  text-decoration: none;
+  color: black;
+  opacity: 0;
+}
+
+.border {
+  width: 0;
+  opacity: 0;
+  background: black;
+  transition: all 1s ease;
+}
+
+@media only screen and (max-width : 1024px) {
+  #hamburger {
+    display: none;
+  }
+
+  .navbar {
+    z-index: 99;
+  }
+}
+@media only screen and (max-width : 480px) {
+  #hamburger {
+    display: inline-block;
+  }
+
+  .change #hamburger-menu-wrapper {
+    height: 100vh;
+    background: white;
+  }
+
+  .change .hamburger-menu-item {
+    font-size: 2em;
+    width: 100%;
+  }
+  .change .hamburger-menu-item .navbar-link {
+    color: black;
+    text-decoration: none;
+    opacity: 1;
+  }
+
+  .border {
+    height: 1px;
+    background: black;
+    width: 80%;
+    align-self: center;
+    opacity: 1;
+  }
+}
+.main {
+  height: 100%;
+  margin-top: 10vh;
+}
+.main .about-me {
+  padding: 40px;
+  border-radius: 25px;
+  background: #6b796e;
+  color: white;
+  text-align: center;
+  font-size: 3em;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  mix-blend-mode: hard-light;
+}
+.main .about-me h3,
+.main .about-me p {
+  margin: 0;
+}
+.main .about-me h3 {
+  color: yellow;
+  text-align: left;
+  font-size: 1.5em;
+}
+.main .about-me span {
+  font-size: 0.5em;
+}
+
+@media only screen and (max-width : 1024px) {
+  .main .about-me {
+    font-size: 1.5em;
+  }
+}
+@media only screen and (min-width : 1025px) {
+  .projects {
+    margin: 10vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-row-gap: 1em;
+    grid-column-gap: 1em;
+    color: black;
+  }
+  .projects .project {
+    background: #d0d5d9;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    width: 600px;
+    height: 200px;
+    transition: all 1s ease-in-out;
+    border-radius: 10px;
+  }
+  .projects .project img {
+    transition: all 1s ease;
+    width: 300px;
+    height: 200px;
+    border-radius: 10px;
+  }
+  .projects .project .title-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .projects .project .title-container h3 {
+    text-align: center;
+    margin: 0;
+  }
+  .projects .project .project-info {
+    color: white;
+    height: 0;
+    opacity: 0;
+    transition: all 0.5s ease-in-out;
+    grid-column: span 2;
+  }
+  .projects .project .project-info .project-description {
+    margin: 0 10px;
+    font-size: 0.7em;
+  }
+  .projects .project .project-info .project-button-group {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+  }
+  .projects .project .project-info .project-button-group .project-svg {
+    height: 1.5em;
+    width: 1.5em;
+    border-radius: 0;
+    margin: 0 10px;
+  }
+  .projects .project:hover {
+    height: 400px;
+    width: 640px;
+  }
+  .projects .project:hover img {
+    border-radius: 50%;
+  }
+  .projects .project:hover .project-info {
+    height: auto;
+    opacity: 1;
+    color: black;
+    display: flex;
+    flex-direction: column;
+  }
+}
+@media only screen and (max-width : 1024px) {
+  .projects {
+    display: grid;
+    grid-template-columns: 1fr;
+    overflow: scroll;
+    max-height: 100vh;
+  }
+  .projects .project {
+    height: 150vh;
+  }
+  .projects .project .title-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .projects .project img {
+    height: 40vh;
+    width: 90%;
+    border-radius: 25px;
+  }
+  .projects .project h3 {
+    margin: 10px;
+  }
+  .projects .project .project-info {
+    color: white;
+    text-align: center;
+  }
+  .projects .project .project-info p {
+    margin: 0;
+  }
+  .projects .project .project-info .project-button-group {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  .projects .project .project-info .project-button-group .project-svg {
+    height: 2em;
+    width: 2em;
+    margin: 10px;
+    background: white;
+  }
+  .projects .project .project-info .project-button-group .site {
+    height: 1.9em;
+    border-radius: 5px;
+  }
+  .projects .project .project-info .project-button-group .github {
+    border-radius: 50%;
+  }
+  .projects .project:first-child {
+    margin-top: 10vh;
+  }
+  .projects .project:last-child {
+    height: 90vh;
+  }
+}
+.contact-bar {
+  padding: 10px;
+  border-radius: 25px;
+  display: flex;
+  justify-content: space-around;
+}
+.contact-bar .contact-svg {
+  height: 2em;
+  width: 2em;
+}
+
+/*# sourceMappingURL=style.css.map */

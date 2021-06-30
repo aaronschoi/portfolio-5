@@ -1,0 +1,125 @@
+@media #{$media-desktop} {
+.projects {
+    margin: 10vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-row-gap: 1em;
+    grid-column-gap: 1em;
+    color: black;
+    .project {
+        background: #d0d5d9;
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+        width: 600px;
+        height: 200px;
+        transition: all 1s ease-in-out;
+        border-radius: 10px;
+        img {
+            transition: all 1s ease;
+            width: 300px;
+            height: 200px;
+            border-radius: 10px;
+        }
+        .title-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        h3 {
+            text-align: center;
+            margin: 0;
+        }}
+        .project-info {
+            color: white;
+            height: 0;
+            opacity: 0;
+            transition: all .5s ease-in-out;
+            grid-column: span 2;
+            .project-description {
+                margin: 0 10px;
+                font-size: .7em;
+            }
+            .project-button-group {
+                display: flex;
+                justify-content: flex-end;
+                margin-top: 20px;
+                .project-svg{
+                    height: 1.5em;
+                    width: 1.5em;
+                    border-radius: 0;
+                    margin: 0 10px;
+                }
+            }
+        }
+    }
+    .project:hover {
+            height: 400px;
+            width: 640px;
+            img {
+                border-radius: 50%;
+            }
+            .project-info {
+                height: auto;
+                opacity: 1;
+                color: black;
+                display: flex;
+                flex-direction: column;
+            }
+    }
+}
+}
+
+@media #{$media-tablet} {
+    .projects {
+        display: grid;
+        grid-template-columns: 1fr;
+        overflow: scroll;
+        max-height: 100vh;
+        .project {
+            //margin-top: 10vh;
+            height: 150vh;
+            .title-container {
+                display: flex;
+                justify-content: center;
+                align-items: center;}
+            img {
+                height: 40vh;
+                width: 90%;
+                border-radius: 25px ;
+            }
+            h3 {
+                margin: 10px;
+            }
+            .project-info {
+                color: white;
+                text-align: center;
+                p {
+                    margin: 0;
+                }
+                .project-button-group {
+                    display: flex;
+                    justify-content: center;
+                    margin-top: 20px;
+                    .project-svg{
+                        height: 2em;
+                        width: 2em;
+                        margin: 10px;
+                        background: white;
+                    }
+                    .site {
+                        height: 1.9em;
+                        border-radius: 5px;
+                    }
+                    .github {
+                        border-radius: 50%;
+                    }
+                }
+            }
+        }
+        .project:first-child {
+            margin-top: 10vh;
+        }
+        .project:last-child {
+            height: 90vh;
+        }
+    }
+}
