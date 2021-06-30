@@ -3,6 +3,7 @@ import Navbar from "../Navbar/Navbar";
 import ContactBar from "./ContactBar";
 import MessageAlert from "./MessageAlert";
 import { sendThatMessage } from "../../utils/api";
+require('dotenv').config();
 
 export default function Contact() {
 
@@ -29,7 +30,6 @@ export default function Contact() {
     message: ""}))
     .catch(setFormError);
     return ()=> controller.abort();
-
   }
 
   return (
