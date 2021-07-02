@@ -28,7 +28,9 @@ export default function HamburgerMenu() {
         </a>
       </div>
       <div className="border"></div>
+      <div className="contact-bar">
         <ContactBar />
+        </div>
     </div>
   );
 }

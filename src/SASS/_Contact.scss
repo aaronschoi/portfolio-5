@@ -8,3 +8,84 @@
         width: 2em;
     }
 }
+
+.large-context {
+    .contact-svg {
+        height: 2em;
+        width: 2em;
+        padding: 10px;
+        cursor: pointer;
+        border-radius: 50%;
+    }
+    .contact-svg:hover {
+        background:white;
+    }
+}
+
+.contact-form {
+    display: grid;
+    grid-template-columns: .25fr repeat(10, 1fr) .25fr;
+    grid-template-rows: 1fr 1fr 1fr 4fr .5fr;
+    grid-template-areas:
+    ". . alert alert alert alert . . . . . ."
+    ". . lc lc lc lc . . . . . ."
+    ". . from from from from . . . . . ."
+    ". . message message message message message message . . . ."
+    ". . . . . . . submit . . . .";
+    .contact-form-element, .contact-send  {
+        background-color: transparent;
+        color: black;
+        font-size: 25px;
+        padding: .5em;
+        border-radius: 25px;
+        border: 3px solid white;
+        margin: .5em;
+        font-family: "Bitter", serif;
+        box-shadow: .25em .25em .25em grey;
+    }
+    .contact-form-element:focus {
+        outline: none;
+        background: white;
+        color: black;
+    }
+    // .contact-send {
+    //     border-radius: 25px;
+    //     box-shadow: .25em .25em .25em grey;
+    // }
+    .contact-send:hover {
+        background: black;
+        color: white;
+        cursor: pointer;
+    }
+    .large-context {
+        grid-area: lc;
+    }
+    .from {
+        grid-area: from;
+    }
+    .message{
+        grid-area: message;
+    }
+    .submit {
+        grid-area: submit;
+    }
+    .alert {
+        grid-area: alert;
+    }
+}
+
+@media #{$media-mobile} {
+    .large-context {
+        display: none;
+    }
+    .contact-form {
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: 1fr 1fr 2fr 1fr;
+        grid-template-areas:
+        "alert alert alert alert"
+        "from from . ."
+        "message message message message"
+        ". . submit submit";
+        margin-top: 10vh;
+    }
+}

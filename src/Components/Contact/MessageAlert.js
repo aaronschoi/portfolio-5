@@ -1,5 +1,5 @@
 export default function MessageAlert({ alert }) {
     return (
-        <div>{alert}</div>
+        <div className="alert">{alert}</div>
     )
 }

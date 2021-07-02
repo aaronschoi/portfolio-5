@@ -7,7 +7,7 @@ export default function ContactBar() {
   }
 
   return (
-    <div className="contact-bar">
+    <>
       <img
         src={require("./SVG/emailatsign.svg").default}
         alt="connect@aaronschoi.com"
@@ -32,6 +32,6 @@ export default function ContactBar() {
           className="contact-svg"
         />
       </a>
-    </div>
+    </>
   );
 }
